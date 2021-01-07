@@ -29,7 +29,7 @@ def se_run_tests(browser,ds):
     r = "Fail"
     t = e.args[0]
   finally: 
-    ds["step_result"].update( { datetime.now().strftime("%Y%m%d.%H:%M:%S:%f"): {"ParentTimeStamp": main_ts,"URL": url,"StepText": t,"StepResult":r,"ElementID": id,"StepName": "OpenSite"} })
+    ds["step_result"].update( { datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"): {"ParentTimeStamp": main_ts,"URL": url,"StepText": t,"StepResult":r,"ElementID": id,"StepName": "OpenSite"} })
     if r == "Fail":
       browser.close()
       return
@@ -60,7 +60,7 @@ def se_run_tests(browser,ds):
     r = "Fail"
     t = e.args[0]
   finally: 
-    ds["step_result"].update( { datetime.now().strftime("%Y%m%d.%H:%M:%S:%f"): {"ParentTimeStamp": main_ts,"URL": browser.current_url,"StepText": t,"StepResult":r,"ElementID": id,"StepName": "GoToContactPage"} })
+    ds["step_result"].update( { datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"): {"ParentTimeStamp": main_ts,"URL": browser.current_url,"StepText": t,"StepResult":r,"ElementID": id,"StepName": "GoToContactPage"} })
     if r == "Fail":
       browser.close()
       return
@@ -77,7 +77,7 @@ def se_run_tests(browser,ds):
     r = "Fail"
     t = e.args[0]
   finally:
-    ds["step_result"].update( { datetime.now().strftime("%Y%m%d.%H:%M:%S:%f"): {"ParentTimeStamp": main_ts,"URL": browser.current_url,"StepText": t,"StepResult":r,"ElementID": "none","StepName": "FindText"} })
+    ds["step_result"].update( { datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"): {"ParentTimeStamp": main_ts,"URL": browser.current_url,"StepText": t,"StepResult":r,"ElementID": "none","StepName": "FindText"} })
     if r == "Fail":
       browser.close()
       return
@@ -97,7 +97,7 @@ def se_run_tests(browser,ds):
     r = "Fail"
     t = e.args[0]
   finally:
-    ds["step_result"].update( { datetime.now().strftime("%Y%m%d.%H:%M:%S:%f"): {"ParentTimeStamp": main_ts,"URL": browser.current_url,"StepText": t,"StepResult":r,"ElementID": id,"StepName": "GoToResumePage"} })
+    ds["step_result"].update( { datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"): {"ParentTimeStamp": main_ts,"URL": browser.current_url,"StepText": t,"StepResult":r,"ElementID": id,"StepName": "GoToResumePage"} })
     if r == "Fail":
       browser.close()
       return
@@ -114,14 +114,14 @@ def se_run_tests(browser,ds):
     r = "Fail"
     t = e.args[0]
   finally:
-    ds["step_result"].update( { datetime.now().strftime("%Y%m%d.%H:%M:%S:%f"): {"ParentTimeStamp": main_ts,"URL": browser.current_url,"StepText": t,"StepResult":r,"ElementID": "none","StepName": "FindText"} })
+    ds["step_result"].update( { datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"): {"ParentTimeStamp": main_ts,"URL": browser.current_url,"StepText": t,"StepResult":r,"ElementID": "none","StepName": "FindText"} })
     if r == "Fail":
       browser.close()
       return
-
+  
   # ===== TEST =====
   # find text
-  text = 'Thailand is great!'
+  text = 'Park University'
   try:
     find_text(browser,text)
     r = "Pass"
@@ -131,11 +131,11 @@ def se_run_tests(browser,ds):
     r = "Fail"
     t = e.args[0]
   finally:
-    ds["step_result"].update( { datetime.now().strftime("%Y%m%d.%H:%M:%S:%f"): {"ParentTimeStamp": main_ts,"URL": browser.current_url,"StepText": t,"StepResult":r,"ElementID": "none","StepName": "FindText"} })
+    ds["step_result"].update( { datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"): {"ParentTimeStamp": main_ts,"URL": browser.current_url,"StepText": t,"StepResult":r,"ElementID": "none","StepName": "FindText"} })
     if r == "Fail":
       browser.close()
       return
- 
+   
   # close the browser
   browser.close()
 

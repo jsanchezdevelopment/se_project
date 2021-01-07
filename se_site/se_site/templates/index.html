@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <!-- APP STYLE -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  
+  <!-- FAVICON WEBSITE -->
+  <link rel="icon" type="image/x-icon" href="{% static 'css/favicon.ico' %}">
+
+  <!-- GOOGLE CHARTS -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- JAVASCRIPT -->
+  <script src="{% static 'js/se_site.js' %}"></script>
+
+
+  <style>
+  </style>
+</head>
+<body>
+<!--<div class="topnav">-->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">  
+  <div class="collapse navbar-collapse topnav" id="myNavbar2">
+    <a href="{% url 'index' %}" title="Home">Home</a>
+    <!-- SELECT LIST-->
+    <div class="spacer"></div>
+    <div>
+
+    <form class="form-inline" action="{% url 'index' %}" method="get" autocomplete="off" id="main-form" style="display: none;">
+      <select class="form-control" name="continent" id="continent" onchange="ConfigCountrySelect()">
+        <!-- options set in the javascript below -->
+        <option selected>Select Continent</option>
+      </select>
+      <div class="spacer"></div>
+      <select class="form-control" name="country" id="country" onchange="ConfigTeststepMenu()">
+        <!-- options set in the javascript below -->
+        <option selected>Select Country</option>
+      </select>
+      <!-- SUBMIT BUTTON FOR FORM -->
+      <div class="spacer"></div>
+      <button id="gobtn" type="submit" class="btn btn-primary" onclick="ds()" title="Go get the data!">GO!</button>
+    </form>
+    </div>
+  </div>
+</nav>
+  
+<!--</div>-->
+
+<div style="padding: 14px 16px;">
+  {% block content %}
+    <!-- template goes here -->
+  {% endblock %}
+</div>
+</body>
+</html>
